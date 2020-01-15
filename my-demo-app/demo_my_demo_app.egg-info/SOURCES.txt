@@ -1,0 +1,6 @@
+README.md
+setup.py
+my-demo-app/demo_my_demo_app.egg-info/PKG-INFO
+my-demo-app/demo_my_demo_app.egg-info/SOURCES.txt
+my-demo-app/demo_my_demo_app.egg-info/dependency_links.txt
+my-demo-app/demo_my_demo_app.egg-info/top_level.txt
