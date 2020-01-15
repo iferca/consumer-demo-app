@@ -1,7 +1,7 @@
 import logging
 import sys
 import config
-from confluent_kafka import Consumer, KafkaException
+from confluent_kafka.cimpl import Consumer, KafkaException
 
 conf = {"bootstrap.servers": config.resolve_config("BROKER"),
         "group.id": config.resolve_config("GROUP_ID"),

@@ -6,17 +6,17 @@ with open("README.md") as fp:
 
 
 setuptools.setup(
-    name="demo-my-demo-app",
+    name="consumer-demo-app",
     version="0.0.1",
 
-    description="AWS EKS + Kafka POC stack: demo my-demo-app",
+    description="AWS EKS + Kafka POC stack: demo consumer-demo-app",
     long_description=long_description,
     long_description_content_type="text/markdown",
 
     author="Israel Fdez.",
 
-    package_dir={"": "my-demo-app"},
-    packages=setuptools.find_packages(where="eks_kafka"),
+    package_dir={"": "consumer-demo-app"},
+    packages=setuptools.find_packages(where="consumer-demo-app"),
 
     install_requires=[
 
