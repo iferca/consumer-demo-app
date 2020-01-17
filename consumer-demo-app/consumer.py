@@ -1,5 +1,6 @@
 import logging
 import sys
+
 import config
 from confluent_kafka.cimpl import Consumer, KafkaException
 
@@ -28,15 +29,13 @@ def run_consumer():
                 raise KafkaException(msg.error())
             else:
                 # Proper message
-                sys.stderr.write('%% %s [%d] at offset %d with key %s:\n' %
-                                 (msg.topic(), msg.partition(), msg.offset(),
-                                  str(msg.key())))
+                # sys.stderr.write('%% %s [%d] at offset %d with key %s:\n' %
+                #                 (msg.topic(), msg.partition(), msg.offset(),
+                #                  str(msg.key())))
                 print(msg.value())
-
     except KeyboardInterrupt:
         sys.stderr.write('%% Aborted by user\n')
 
     finally:
         # Close down consumer to commit final offsets.
         consumer.close()
-
