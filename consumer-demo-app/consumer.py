@@ -1,13 +1,20 @@
 import logging
 import sys
+import os
 
 import config
 from confluent_kafka.cimpl import Consumer, KafkaException
 
-conf = {"bootstrap.servers": config.resolve_config("BROKER"),
-        "group.id": config.resolve_config("GROUP_ID"),
-        "session.timeout.ms": 6000,
-        "auto.offset.reset": "earliest"}
+conf = {
+    "bootstrap.servers": config.resolve_config("BROKER"),
+    "group.id": config.resolve_config("GROUP_ID"),
+    "session.timeout.ms": 6000,
+    "auto.offset.reset": "earliest",
+    "sasl.mechanisms": "PLAIN",
+    "security.protocol": "SASL_SSL",
+    "sasl.username": os.environ.get("CONF_API_KEY"),
+    "sasl.password": os.environ.get("CONF_API_SECRET")
+}
 
 
 def run_consumer():

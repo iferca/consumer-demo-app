@@ -2,10 +2,9 @@
 import os
 
 defaults = {
-    "BROKER": "localhost",
+    "BROKER": "pkc-e8mp5.eu-west-1.aws.confluent.cloud:9092",
     "GROUP_ID": "default-demo-consumer-id",
-    "CONSUMER_TOPICS": ["test_topic_in"],
-    "PRODUCER_TOPICS": ["test_topic_out"]
+    "CONSUMER_TOPICS": ["spanda.poc.test.in"]
 }
 
 
